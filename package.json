@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next export && node ./node_modules/@netlify/next",
     "start": "next start",
     "lint": "next lint"
   },
