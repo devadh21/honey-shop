@@ -28,12 +28,12 @@ export default async  function Home() {
 
   return (
     <main className="full-screen">     
-      <Hero />
+      {/* <Hero />
       <Products products={data} />
       <About />
       <WhyUs/>      
       <Services/>      
-      <Newslatter/>      
+      <Newslatter/>       */}
     </main>
   );
 }
