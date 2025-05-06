@@ -23,13 +23,12 @@ async function getProducts() {
 
 export default async  function Home() {
   // get products data from the server. 
-  // const data = await getProducts();    
+  const data = await getProducts();    
 
   return (
     <main className="full-screen"> 
-    test    
       <Hero />
-      {/* <Products products={data} /> */}
+      <Products products={data} />
       <About />
       <WhyUs/>      
       <Services/>      
