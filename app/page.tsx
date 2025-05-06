@@ -10,17 +10,16 @@ import Newslatter from "@/components/home/Newslatter";
 import { IProduct } from "@/typings/interfaces";
 
 
-//test2 test3
 
 
-// async function getProducts() {   
-//   const res:IProduct[] | undefined = await getProductsActions();
+async function getProducts() {   
+  const res:IProduct[] | undefined = await getProductsActions();
 
-//   if (res === undefined) throw new Error("No Products Found"); 
-//   revalidatePath("/");
+  if (res === undefined) throw new Error("No Products Found"); 
+  revalidatePath("/");
 
-//   return res; 
-// }
+  return res; 
+}
 
 export default async  function Home() {
   // get products data from the server. 
@@ -29,12 +28,12 @@ export default async  function Home() {
   return (
     <main className="full-screen"> 
     test    
-      {/* <Hero />
-      <Products products={data} />
+      <Hero />
+      {/* <Products products={data} /> */}
       <About />
       <WhyUs/>      
       <Services/>      
-      <Newslatter/>       */}
+      <Newslatter/>      
     </main>
   );
 }
