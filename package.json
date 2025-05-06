@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/next": "^1.4.9",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.0.3",
     "flowbite": "^2.3.0",
