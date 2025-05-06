@@ -5,12 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node ./node_modules/@netlify/next",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@netlify/next": "^1.4.9",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.0.3",
     "flowbite": "^2.3.0",
@@ -24,7 +22,6 @@
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^5.11.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/jquery": "^3.5.29",
     "@types/node": "^20",
