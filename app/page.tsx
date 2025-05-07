@@ -25,6 +25,7 @@ export default   function Home() {
       // get products data from the server. 
       const data = await getProducts();
       setProducts(data);
+      console.log("data",data)
     }
 
     fetchData();
