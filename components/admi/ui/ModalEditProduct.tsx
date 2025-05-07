@@ -8,6 +8,9 @@ import cloudinary from "@/cloudinaryconfig";
 import ButtonAction from "@/components/admi/ui/ButtonAction";
 import React from "react";
 
+
+
+
 export default function ModalEditProduct({
   pdt,
   setShowModalEdit,
@@ -52,6 +55,9 @@ export default function ModalEditProduct({
 
     // show notification
     toast.success("Your product successfully updated!");
+
+    
+
   };
 
   return (

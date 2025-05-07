@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import Pagenation from "@/components/admi/products/Pagenation";
 import SearchBar from "@/components/admi/products/SearchBar";
 import AddNewProduct from "@/components/admi/products/AddNewProduct";
@@ -8,7 +8,10 @@ import { IProduct } from "@/typings/interfaces";
 import SelectPerPage from "@/components/admi/ui/SelectPerPage";
 import Breadcrumb from "@compo/admi/ui/Breadcrumb";
 
-export default async function ProductsPage({
+import { useEffect, useState } from "react";
+
+
+export default  function ProductsPage({
   searchParams,
 }: {
   searchParams: {
@@ -17,12 +20,27 @@ export default async function ProductsPage({
     per_page: string | string[] | undefined;
   };
 }) {
+
+  const [products, setProducts] = useState<IProduct[] | undefined>(undefined);
+  
   const { search, page, per_page } = searchParams;
   const currentPage = page ?? 1;
   const itemsPerPage = per_page ?? 5;
-  const productsWithPagination: IProduct[] | undefined =
-    await getProductsWithPagination(search, currentPage, itemsPerPage); // get all products from the database.
-  const products = productsWithPagination;
+
+
+
+  // const  productsWithPagination: IProduct[] | undefined = await getProductsWithPagination(search, currentPage, itemsPerPage); // get all products from the database.
+  // const products = productsWithPagination;
+
+    useEffect(() => {      
+      async function fetchData() {
+        // get products data from the server. 
+        const  productsWithPagination: IProduct[] | undefined = await getProductsWithPagination(search, currentPage, itemsPerPage);
+        setProducts(productsWithPagination);
+      }
+      fetchData();
+    }, []);
+     
 
   return (
     <div className="p-4">

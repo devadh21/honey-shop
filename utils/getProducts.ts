@@ -1,6 +1,6 @@
 import { IProduct } from "@/typings/interfaces";
 import getProductsActions   from "@/serverActions/products/getProductsActions";
-import { revalidatePath } from "next/cache";
+// import { revalidatePath } from "next/cache";
 
  
 
