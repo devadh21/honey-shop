@@ -3,9 +3,7 @@
 
 
 const nextConfig = {
-    experimental: {
-        serverActions: true,
-      },
+
     images: {
         domains: [ 'res.cloudinary.com','images.unsplash.com', 'via.placeholder.com','lh3.googleusercontent.com' ],
 

@@ -8,7 +8,7 @@ export async function getProducts() {
   const res:IProduct[] | undefined = await getProductsActions();
 
   if (res === undefined) throw new Error("No Products Found"); 
-  revalidatePath("/");
+  // revalidatePath("/");
 
   return res; 
 }
