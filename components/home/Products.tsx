@@ -1,7 +1,7 @@
 import LoandingProductCard from "@/components/detailsProduct/ui/LoandingProductCard";
 import { Toaster } from "sonner";
 
-import ProductCard from "@/elements/ProductCard";
+import ProductCard from "@/elements/ProductCard"; 
 
 import { IProduct } from "@/typings/interfaces";
 
