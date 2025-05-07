@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import Pagenation from "@/components/admi/customers/Pagenation";
 import SearchBar from "@/components/admi/customers/SearchBar";
 import TablesCustomers from "@/components/admi/customers/TablesCustomers";
@@ -7,7 +7,10 @@ import { ICustomer } from "@/typings/interfaces";
 import SelectPerPage from "@/components/admi/ui/SelectPerPage";
 import Breadcrumb from "@compo/admi/ui/Breadcrumb";
 
-export default async function CustomersPage({
+import { useEffect, useState } from "react";
+
+
+export default  function CustomersPage({
   searchParams,
 }: {
   searchParams: {
@@ -16,12 +19,26 @@ export default async function CustomersPage({
     per_page: string | string[] | undefined;
   };
 }) {
+
+  const [customers, setCustomers] = useState<ICustomer[] | undefined>(undefined);
+
   const { search, page, per_page } = searchParams; 
   const currentPage = page ?? 1;
   const itemsPerPage = per_page ?? 5;
-  const customerssWithPagination: ICustomer[] | undefined =
-    await getCustomersWithPagination(search, currentPage, itemsPerPage); // get all products from the database.
-  const customers = customerssWithPagination;
+
+  // const customerssWithPagination: ICustomer[] | undefined =
+  //   await getCustomersWithPagination(search, currentPage, itemsPerPage); // get all products from the database.
+  // const customers = customerssWithPagination;
+
+    useEffect(() => {      
+      async function fetchData() {
+        // get products data from the server.
+        const customerssWithPagination: ICustomer[] | undefined =
+        await getCustomersWithPagination(search, currentPage, itemsPerPage); // get all products from the database.         
+        setCustomers(customerssWithPagination);
+      }
+      fetchData();
+    }, []);  
 
   return (
     <div className="p-4">
